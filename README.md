@@ -1,0 +1,93 @@
+# Log4j version 1.2.17-aims
+
+This jar was created to protect against **CVE-2021-4104**.
+
+## Usage
+
+Add this to your `pom.xml`
+
+```
+<project ...>
+    <repositories>
+        <!-- Open AIMS maven repository on GitHub -->
+        <repository>
+            <id>github_openaims</id>
+            <name>GitHub Open-AIMS repo</name>
+            <url>https://maven.pkg.github.com/open-AIMS/*</url>
+        </repository>
+    </repositories>
+
+    ...
+
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17-aims</version>
+        </dependency>
+
+        ...
+    </dependencies>
+</project>
+```
+
+If one of the dependencies uses another version of log4j,
+exclude it with the exclusions group in the dependency
+declaration.
+
+Example:
+```
+<project ...>
+    ...
+
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17-aims</version>
+        </dependency>
+
+        <dependency>
+            <groupId>uk.ac.rdg.resc</groupId>
+            <artifactId>edal-xml-catalogue</artifactId>
+            <version>1.2.4</version>
+            <type>jar</type>
+
+            <exclusions>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
+
+        </dependency>
+
+        ...
+    </dependencies>
+
+</project>
+```
+
+## Creation of the jar
+
+How this jar was created:
+
+### Copying the original files
+
+Copy the jar from your local maven repo to this project:
+```
+$ cp ~/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar jar/log4j-1.2.17-aims.jar
+```
+
+### Modifying the JAR
+
+Reference: https://access.redhat.com/security/cve/CVE-2021-4104
+
+Remove the offending class:
+```
+$ zip -q -d log4j/log4j/1.2.17-aims/log4j-1.2.17-aims.jar org/apache/log4j/net/JMSAppender.class
+```
+
+### Deploy in Maven Open-AIMS as a MVN library
+
+Create a new release on GitHub
