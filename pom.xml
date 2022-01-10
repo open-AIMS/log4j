@@ -41,7 +41,7 @@
                                 <resource>
                                     <directory>jar</directory>
                                     <includes>
-                                        <include>log4j-1.2.17-aims.jar</include>
+                                        <include>log4j-1.2.17-aims2.jar</include>
                                     </includes>
                                 </resource>
                             </resources>
