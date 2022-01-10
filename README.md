@@ -21,7 +21,7 @@ Add this to your `pom.xml`
 
     <dependencies>
         <dependency>
-            <groupId>log4j</groupId>
+            <groupId>au.gov.aims</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17-aims</version>
         </dependency>
@@ -42,7 +42,7 @@ Example:
 
     <dependencies>
         <dependency>
-            <groupId>log4j</groupId>
+            <groupId>au.gov.aims</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17-aims</version>
         </dependency>
