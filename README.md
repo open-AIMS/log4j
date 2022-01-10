@@ -85,7 +85,7 @@ Reference: https://access.redhat.com/security/cve/CVE-2021-4104
 
 Remove the offending class:
 ```
-$ zip -q -d log4j/log4j/1.2.17-aims/log4j-1.2.17-aims.jar org/apache/log4j/net/JMSAppender.class
+$ zip -q -d jar/log4j-1.2.17-aims.jar org/apache/log4j/net/JMSAppender.class
 ```
 
 ### Deploy in Maven Open-AIMS as a MVN library
