@@ -4,6 +4,10 @@ This jar was created to protect against **CVE-2021-4104**.
 
 It is meant to be used as a direct replacement for Log4j v1 libraries.
 
+Log4j 1.2 project page: https://logging.apache.org/log4j/1.2/
+
+Apache 2.0 Licence: https://www.apache.org/licenses/LICENSE-2.0
+
 ## Usage
 
 Add this to your `pom.xml`
