@@ -2,6 +2,8 @@
 
 This jar was created to protect against **CVE-2021-4104**.
 
+It is meant to be used as a direct replacement for Log4j v1 libraries.
+
 ## Usage
 
 Add this to your `pom.xml`
