@@ -74,6 +74,22 @@ Example:
 </project>
 ```
 
+If the project is managed by GitHub workflow, don't forget to add credentials for the
+`github_openaims` repository in your `maven-settings.xml` file:
+```
+<settings ...>
+    ...
+    <servers>
+        <!-- Used by GitHub server to resolve Open-AIMS dependencies when running tests or building the package -->
+        <server>
+            <id>github_openaims</id>
+            <username>${env.GITHUB_USERNAME}</username>
+            <password>${env.GITHUB_TOKEN}</password>
+        </server>
+    </servers>
+</settings>
+```
+
 ## Creation of the jar
 
 How this jar was created:
